@@ -2,6 +2,7 @@ import { matButton } from "./MatButton";
 import { matButtonGroup } from "./MatButtonGroup";
 import { matCheckbox } from "./MatCheckbox";
 import { matRadioGroup } from "./MatRadioGroup";
+import { matRating } from "./MatRating";
 import { matSelect } from "./MatSelect";
 import { matTextField } from "./MatTextField";
 // import { matGrid } from "./MatGrid";
@@ -14,6 +15,7 @@ const muiComponents = [
   matSelect,
   matButtonGroup,
   matCheckbox,
+  matRating,
   //   matGrid,
   //   tailGrid,
 ];
