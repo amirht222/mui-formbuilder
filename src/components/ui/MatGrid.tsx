@@ -1,10 +1,10 @@
-import { define, node, number } from "@react-form-builder/core";
-import type { ReactNode } from "react";
-import ViewStreamIcon from "@mui/icons-material/ViewStream";
-import { Grid } from "@mui/material";
+import {define, node, number} from '@react-form-builder/core';
+import type {ReactNode} from 'react';
+import ViewStreamIcon from '@mui/icons-material/ViewStream';
+import {Grid} from '@mui/material';
 
 const GridIcon = () => {
-  return <ViewStreamIcon sx={{ color: "tomato" }} />;
+  return <ViewStreamIcon color="secondary" />;
 };
 
 interface MatGridProps {
@@ -26,8 +26,8 @@ export const MatGrid = (props: MatGridProps) => {
   );
 };
 
-export const matGrid = define(MatGrid, "MatGrid")
-  .name("Two Cols")
+export const matGrid = define(MatGrid, 'MatGrid')
+  .name('Two Cols')
   .icon(GridIcon)
   .props({
     rightCol: node,

@@ -1,11 +1,11 @@
-import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
+import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 import {
   FormControlLabel,
   Radio,
   RadioGroup,
   RadioGroupProps,
-} from "@mui/material";
-import { array, define, toLabeledValues } from "@react-form-builder/core";
+} from '@mui/material';
+import {array, define, toLabeledValues} from '@react-form-builder/core';
 
 type RadioItem = {
   label: string;
@@ -13,7 +13,7 @@ type RadioItem = {
 };
 
 const RadioGroupIcon = () => {
-  return <RadioButtonCheckedIcon sx={{ color: "tomato" }} />;
+  return <RadioButtonCheckedIcon color="secondary" />;
 };
 
 type MatRadioGroupProps = RadioGroupProps & {
@@ -21,10 +21,10 @@ type MatRadioGroupProps = RadioGroupProps & {
 };
 
 const MatRadioGroup = (props: MatRadioGroupProps) => {
-  const { items, onChange, ...otherProps } = props;
+  const {items, onChange, ...otherProps} = props;
   return (
     <RadioGroup {...otherProps} name="radio-buttons-group">
-      {items?.map((item) => (
+      {items?.map(item => (
         <FormControlLabel
           value={item.value}
           control={<Radio />}
@@ -35,9 +35,9 @@ const MatRadioGroup = (props: MatRadioGroupProps) => {
   );
 };
 
-export const matRadioGroup = define(MatRadioGroup, "MatRadioGroup")
-  .name("Radio Group")
+export const matRadioGroup = define(MatRadioGroup, 'MatRadioGroup')
+  .name('Radio Group')
   .props({
-    items: array.default(toLabeledValues(["Item1", "Item2", "Item3"])),
+    items: array.default(toLabeledValues(['Item1', 'Item2', 'Item3'])),
   })
   .icon(RadioGroupIcon);

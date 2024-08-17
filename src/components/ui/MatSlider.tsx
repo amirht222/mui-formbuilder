@@ -1,9 +1,9 @@
-import LinearScaleIcon from "@mui/icons-material/LinearScale";
-import { Slider, SliderProps } from "@mui/material";
-import { define, number } from "@react-form-builder/core";
+import LinearScaleIcon from '@mui/icons-material/LinearScale';
+import {Slider, SliderProps} from '@mui/material';
+import {boolean, define, number} from '@react-form-builder/core';
 
 const MatSliderIcon = () => {
-  return <LinearScaleIcon sx={{ color: "tomato" }} />;
+  return <LinearScaleIcon color="secondary" />;
 };
 
 type MatSliderProps = SliderProps & {
@@ -11,7 +11,7 @@ type MatSliderProps = SliderProps & {
 };
 
 const MatSlider = (props: MatSliderProps) => {
-  const { onChange, ...otherProps } = props;
+  const {onChange, ...otherProps} = props;
   return (
     <Slider
       {...otherProps}
@@ -22,9 +22,13 @@ const MatSlider = (props: MatSliderProps) => {
   );
 };
 
-export const matSlider = define(MatSlider, "MatSlider")
-  .name("Slider")
+export const matSlider = define(MatSlider, 'MatSlider')
+  .name('Slider')
   .props({
     value: number.valued.default(10),
+    step: number,
+    marks: boolean.default(false),
+    min: number,
+    max: number,
   })
   .icon(MatSliderIcon);

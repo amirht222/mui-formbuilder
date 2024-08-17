@@ -1,6 +1,6 @@
-import MenuIcon from "@mui/icons-material/Menu";
-import { MenuItem, Select, SelectProps } from "@mui/material";
-import { array, define, toLabeledValues } from "@react-form-builder/core";
+import MenuIcon from '@mui/icons-material/Menu';
+import {MenuItem, Select, SelectProps} from '@mui/material';
+import {array, define, toLabeledValues} from '@react-form-builder/core';
 
 type MenuItem = {
   label: string;
@@ -8,7 +8,7 @@ type MenuItem = {
 };
 
 const SelectIcon = () => {
-  return <MenuIcon sx={{ color: "tomato" }} />;
+  return <MenuIcon color="secondary" />;
 };
 
 type MatSelectProps = SelectProps & {
@@ -16,19 +16,17 @@ type MatSelectProps = SelectProps & {
 };
 
 const MatSelectGroup = (props: MatSelectProps) => {
-  const { items, ...otherProps } = props;
+  const {items, ...otherProps} = props;
   return (
     <Select {...otherProps} name="select-component">
-      {items?.map((item) => (
-        <MenuItem value={item.value}>{item.label}</MenuItem>
-      ))}
+      {items?.map(item => <MenuItem value={item.value}>{item.label}</MenuItem>)}
     </Select>
   );
 };
 
-export const matSelect = define(MatSelectGroup, "MatSelect")
-  .name("Select")
+export const matSelect = define(MatSelectGroup, 'MatSelect')
+  .name('Select')
   .props({
-    items: array.default(toLabeledValues(["Item1", "Item2", "Item3"])),
+    items: array.default(toLabeledValues(['Item1', 'Item2', 'Item3'])),
   })
   .icon(SelectIcon);
