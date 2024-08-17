@@ -19,7 +19,7 @@ const MatCheckbox = (props: MatCheckboxProps) => {
     <Checkbox
       {...otherProps}
       onChange={(event) => {
-        onChange?.(event.target.value);
+        onChange?.(event.target.checked);
       }}
     />
   );

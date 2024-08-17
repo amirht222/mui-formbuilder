@@ -19,7 +19,7 @@ const MatSwitch = (props: MatSwitchProps) => {
     <Switch
       {...otherProps}
       onChange={(event) => {
-        onChange?.(event.target.value);
+        onChange?.(event.target.checked);
       }}
     />
   );
