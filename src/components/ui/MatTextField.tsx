@@ -23,7 +23,7 @@ const MatTextField = (props: MatTextFieldProps) => {
 };
 
 export const matTextField = define(MatTextField, "MatTextField")
-  .name("TextField")
+  .name("Text Field")
   .props({
     value: string.valued.default(""),
   })
