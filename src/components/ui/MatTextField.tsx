@@ -1,5 +1,5 @@
 import { TextField, TextFieldProps } from "@mui/material";
-import { define, string } from "@react-form-builder/core";
+import { boolean, define, oneOf, string } from "@react-form-builder/core";
 import CreateIcon from "@mui/icons-material/Create";
 
 const TextFieldIcon = () => {
@@ -26,5 +26,9 @@ export const matTextField = define(MatTextField, "MatTextField")
   .name("Text Field")
   .props({
     value: string.valued.default(""),
+    placeholder: string.default(""),
+    color: oneOf("primary", "secondary"),
+    disabled: boolean.default(false),
+    multiline: boolean.default(false),
   })
   .icon(TextFieldIcon);
